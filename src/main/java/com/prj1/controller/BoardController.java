@@ -48,4 +48,5 @@ public class BoardController {
         // jsp로 포워드
         return "board/home";
     }
+
 }
