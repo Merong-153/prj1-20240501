@@ -5,7 +5,10 @@
     <title>Title</title>
 </head>
 <body>
+
 <c:import url="/WEB-INF/fragment/navbar.jsp"></c:import>
+
+
 <h3>${board.id} 번 게시물</h3>
 <div>
     제목
@@ -23,8 +26,9 @@
     작성일시
     <input type="datetime-local" readonly value="${board.inserted}">
 </div>
+
 <div>
-    <form action="/delete" method="post">
+    <form action="/delete" method="post" onsubmit="return confirm('삭제 하시겠습니까?')">
         <input type="hidden" name="id" value="${board.id}">
         <button>삭제</button>
     </form>
