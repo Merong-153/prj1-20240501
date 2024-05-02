@@ -14,50 +14,37 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-6">
-            <h3 class="mb-4">회원 정보</h3>
+            <h3 class="mb-4">${member.nickName}회원정보 수정</h3>
             <%-- div>div.mb-3*4>label.form-label+input[readonly].form-control--%>
             <div>
                 <div class="mb-3">
                     <label for="inputEmail" class="form-label">
                         이메일
                     </label>
-                    <input value="${member.email}" id="inputEmail" type="text" readonly="" class="form-control">
+                    <input value="${member.email}" id="inputEmail" name="email" type="text" class="form-control" form="formUpdate">
                 </div>
                 <div class="mb-3">
                     <label for="inputPassword" class="form-label">
                         패스워드
                     </label>
-                    <input value="${member.password}" id="inputPassword" type="text" readonly="" class="form-control">
+                    <input value="${member.password}" id="inputPassword" type="text" name="password" class="form-control" form="formUpdate">
                 </div>
                 <div class="mb-3">
                     <label for="inputNickName" class="form-label">
                         별명
                     </label>
-                    <input value="${member.nickName}" id="inputNickName" type="text" readonly="" class="form-control">
+                    <input value="${member.nickName}" id="inputNickName" type="text" name="nickName" class="form-control" form="formUpdate">
                 </div>
-                <div class="mb-3">
-                    <label for="inputInserted" class="form-label">
-                        가입일시
-                    </label>
-                    <input value="${member.inserted}" id="inputInserted" type="text" readonly="" class="form-control">
-                </div>
-
                 <div>
-                    <button class="btn btn-danger" form="formDelete">탈퇴</button>
-                    <button class="btn btn-danger" form="formUpdate">수정</button>
+                    <button class="btn btn-danger" form="formUpdate">저장</button>
                 </div>
             </div>
 
         </div>
     </div>
 </div>
-<div class="d-none" onsubmit="return confirm('탈퇴하시겠습니까?')">
-    <form action="/member/remove" id="formDelete" method="post">
-        <input type="hidden" name="id" value="${member.id}">
-    </form>
-</div>
-<div class="d-none">
-    <form action="/member/update" id="formUpdate" method="get">
+<div class="d-none" onsubmit="return confirm('수정하시겠습니까?')">
+    <form action="/member/update" id="formUpdate" method="post">
         <input type="hidden" name="id" value="${member.id}">
     </form>
 </div>

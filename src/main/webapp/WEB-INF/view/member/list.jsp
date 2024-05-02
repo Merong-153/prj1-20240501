@@ -11,6 +11,11 @@
 <body>
 
 <c:import url="/WEB-INF/fragment/navbar.jsp"/>
+<c:if test="${not empty message}">
+    <script>
+        alert('${message}')
+    </script>
+</c:if>
 
 <%--div.container>div.row.justify-content-center>div.col-6--%>
 <div class="container">
