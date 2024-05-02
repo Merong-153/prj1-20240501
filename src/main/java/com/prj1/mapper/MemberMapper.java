@@ -37,7 +37,7 @@ public interface MemberMapper {
 
     @Update("""
             UPDATE member
-            SET email = #{email}, password = #{password}, nick_name = #{nickName}
+            SET password = #{password}, nick_name = #{nickName}
             WHERE id = #{id}
             """)
     int update(Member member);

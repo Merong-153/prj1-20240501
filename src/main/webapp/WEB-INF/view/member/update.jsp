@@ -21,7 +21,7 @@
                     <label for="inputEmail" class="form-label">
                         이메일
                     </label>
-                    <input value="${member.email}" id="inputEmail" name="email" type="text" class="form-control" form="formUpdate">
+                    <input value="${member.email}" id="inputEmail" name="email" type="text" class="form-control" readonly>
                 </div>
                 <div class="mb-3">
                     <label for="inputPassword" class="form-label">
